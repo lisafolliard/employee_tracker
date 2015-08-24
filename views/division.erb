@@ -18,6 +18,22 @@
 <% end %>
 
 
+<form action='/division/<%= @division.id() %>/update' method='post'>
+
+  <input name="_method" type="hidden" value="patch">
+  <div class='form-group'>
+    <label for='update_division'></label>
+    <input id='update_division' name='update_division' class='form-control' type='text'>
+  </div>
+  <button class='btn btn-lg'>Update</button>
+</form>
+
+
+
+
+
+
+
 
 <form action='/employees' method ='post'>
 
