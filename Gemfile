@@ -1,6 +1,6 @@
 source("https://rubygems.org")
 
-gem("pg")
+gem('pg')
 gem("rspec")
 gem("sinatra")
 gem("sinatra-contrib", :require => "sinatra/reloader")
