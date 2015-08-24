@@ -33,6 +33,13 @@ patch('/division/:id/update') do
   redirect("/division/#{@division.id()}")
 end
 
+delete('/division/:id/delete') do
+  @divisions = Division.all()
+  @division = Division.find(params.fetch("id").to_i())
+  @divisions.delete(@division)
+  erb(:index)
+end
+
 post('/employees') do
   employee = params.fetch('name')
   division_id = params.fetch('division_id').to_i()

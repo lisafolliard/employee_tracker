@@ -1,6 +1,12 @@
 
 
-<h1><%= @division.name() %></h1>
+<h1><%= @division.name() %>
+  <form action='/division/<%= @division.id() %>/delete' method='post'>
+  <div class='form-group'>
+    <input name="_method" type="hidden" value="delete">
+    <button class='btn'>Delete <%= @division.name()%></button>
+  </div>
+</form></h1>
 
 <% if @division.employees().any? %>
 <h3>Here are all the employees in this department:</h3>
@@ -17,18 +23,19 @@
 
 <% end %>
 
+</br></br></br>
 
 <form action='/division/<%= @division.id() %>/update' method='post'>
 
   <input name="_method" type="hidden" value="patch">
   <div class='form-group'>
-    <label for='update_division'></label>
+    <label for='update_division'>Update division name</label>
     <input id='update_division' name='update_division' class='form-control' type='text'>
   </div>
   <button type="submit" class="btn btn-warning">Update</button>
 </form>
 
-
+</br>
 
 
 
