@@ -67,5 +67,5 @@ patch('/employee/:id/update') do
   new_name = params.fetch("update_employee")
   @employee.update({:name => new_name})
   @employees = Employee.all()
-  redirect("/employee/#{@employee.id()}")
+  redirect("/division/#{@division.id()}")
 end

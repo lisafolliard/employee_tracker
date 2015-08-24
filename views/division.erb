@@ -1,6 +1,6 @@
+<div class='box'>
 
-
-<h1><%= @division.name() %>
+  <h1><%= @division.name() %>
   <form action='/division/<%= @division.id() %>/delete' method='post'>
   <div class='form-group'>
     <input name="_method" type="hidden" value="delete">
@@ -54,3 +54,5 @@
     <button type="submit" class="btn btn-warning">Add Employee</button>
   </div>
 </form>
+
+</div>
