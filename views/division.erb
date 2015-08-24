@@ -4,7 +4,7 @@
   <form action='/division/<%= @division.id() %>/delete' method='post'>
   <div class='form-group'>
     <input name="_method" type="hidden" value="delete">
-    <button class='btn'>Delete <%= @division.name()%></button>
+    <button class='btn btn-danger'>Delete <%= @division.name()%></button>
   </div>
 </form></h1>
 
@@ -14,7 +14,7 @@
 
 <ul>
   <% @division.employees().each() do |employee| %>
-  <li><%= employee.name() %></li>
+  <li><a href='/employee/<%= employee.id() %>'><%= employee.name() %></a></li>
   <% end %>
 </ul>
 

@@ -48,3 +48,8 @@ post('/employees') do
   @employee.save()
   erb(:division)
 end
+
+get('/employee/:id') do
+  @employee = Employee.find(params.fetch("id").to_i())
+  erb(:employee)
+end
