@@ -14,3 +14,8 @@ get('/division/:id/edit') do
   @division = Division.find(params.fetch("id").to_i())
   erb(:division_edit)
 end
+
+
+  #
+
+  <input id="division_id" name="division_id" type="hidden" value="<%= @division.id() %>">

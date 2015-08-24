@@ -14,8 +14,7 @@ end
 
 post('/') do
   name= params.fetch("name")
-  new_division = Division.new({:name => name})
-  new_division.save()
+  Division.create({:name => name})
   @divisions=Division.all()
   erb(:index)
 end
@@ -44,12 +43,21 @@ post('/employees') do
   employee = params.fetch('name')
   division_id = params.fetch('division_id').to_i()
   @division = Division.find(division_id)
-  @employee = Employee.new({:name => employee, :division_id => division_id})
-  @employee.save()
+  Employee.create({:name => employee, :division_id => division_id})
   erb(:division)
 end
 
 get('/employee/:id') do
   @employee = Employee.find(params.fetch("id").to_i())
   erb(:employee)
+end
+
+#Still not clear about how this works in entirety
+
+delete('/employee/:id/delete') do
+  @employee = Employee.find(params.fetch('id').to_i())
+  @division_id = @employee.division.id.to_i
+  @division = Division.find(@division_id)
+  @employee.delete
+  erb(:division)
 end
