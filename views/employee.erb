@@ -1,21 +1,21 @@
 <h1><%= @employee.name() %>
-  <form action='/employee/<%= @employee.id() %>/delete' method='post'>
-    <div class='form-group'>
-      <input name="_method" type="hidden" value="delete">
-      <button class='btn btn-danger'>Delete <%= @employee.name()%></button>
-    </div>
-  </form></h1>
+
+<form action='/employee/<%= @employee.id() %>/delete' method='post'>
+  <div class='form-group'>
+    <input name="_method" type="hidden" value="delete">
+    <button class='btn btn-danger'>Delete <%= @employee.name()%></button>
+  </div>
+</form></h1>
+
+
+<form action='/employee/<%= @employee.id() %>/update' method='post'>
 
 
 
-  <form action='/employee/<%= @employee.id() %>/update' method='post'>
-
-
-
-    <input name="_method" type="hidden" value="patch">
-    <div class='form-group'>
-      <label for='update_employee'>Update employee name</label>
-      <input id='update_employee' name='update_employee' class='form-control' type='text'>
-    </div>
-    <button type="submit" class="btn btn-warning">Update</button>
-  </form>
+  <input name="_method" type="hidden" value="patch">
+  <div class='form-group'>
+    <label for='update_employee'>Update employee name</label>
+    <input id='update_employee' name='update_employee' class='form-control' type='text'>
+  </div>
+  <button type="submit" class="btn btn-warning">Update</button>
+</form>

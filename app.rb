@@ -61,3 +61,11 @@ delete('/employee/:id/delete') do
   @employee.delete
   erb(:division)
 end
+
+patch('/employee/:id/update') do
+  @employee = Employee.find(params.fetch('id').to_i())
+  new_name = params.fetch("update_employee")
+  @employee.update({:name => new_name})
+  @employees = Employee.all()
+  redirect("/employee/#{@employee.id()}")
+end
