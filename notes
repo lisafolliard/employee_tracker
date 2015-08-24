@@ -1,0 +1,5 @@
+<ol>
+  <% @divisions.each() do |division| %>
+  <li><a href='/division/<%= division.id() %>'><%= division.name() %></a></li>
+  <% end %>
+</ol>

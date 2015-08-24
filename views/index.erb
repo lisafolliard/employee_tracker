@@ -1,3 +1,14 @@
+<h2>Green Company</h2>
+
+<ol>
+  <% @divisions.each() do |division| %>
+  <li><a href='/division/<%= division.id() %>'><%= division.name() %></a><a href='/division/<%= division.id() %>/edit'><i>  update</i></a></li>
+  <% end %>
+</ol>
+
+
+
+
 <form action='/' method= 'post'>
   <div class= "form-group">
     <label for= 'division'>Add a new division</label>
