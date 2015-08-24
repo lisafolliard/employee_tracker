@@ -30,7 +30,7 @@ patch('/division/:id/update') do
   new_name = params.fetch("update_division")
   @division.update({:name => new_name})
   @divisions = Division.all()
-  erb(:index)
+  redirect("/division/#{@division.id()}")
 end
 
 post('/employees') do
